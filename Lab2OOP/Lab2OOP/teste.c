@@ -2,6 +2,7 @@
 #include "HeaderService.h"
 #include "HeaderUi.h"
 #include "HeaderRepo.h"
+#include "HeaderUtils.h"
 
 void testare_adaugare_modificare()
 {
@@ -34,8 +35,10 @@ void testare_stergeri()
 {
 	VectorDinamic v = creeazaVectorDinamic();
 	adauga_oferta_sv(2, "casa", "aleea", 99, 40, &v);
-	assert(sterge_optiune_sv(&v, 2) == 0);
-	assert(v.of[0].adresa == NULL);
+	adauga_oferta_sv(3, "casa", "aleea", 992, 240, &v);
+	adauga_oferta_sv(4, "apartament", "aleea", 992, 240, &v);
+
+	assert(sterge_optiune_sv(&v, 3) == 0);
 	assert(sterge_optiune_sv(&v, 293) == 1);
 	distrugeVectorDinamic(&v);
 
@@ -67,20 +70,20 @@ void testare_resize()
 
 void testare_validarari()
 {
-	assert(validare_criteriu("teren") == 0);
+	assert(validare_criteriu("pret") == 0);
 	assert(validare_criteriu("dsafd") == 1);
 
 	oferta x = creeaza_oferta(1, "apartament", "aleea", 999, 40);
 	assert(validate(x) == 0);
 	oferta y = creeaza_oferta(-1, "apartament", "aleea", 999, 40);
-	assert(validate(x) == 3);
+	assert(validate(y) == 3);
 	oferta z = creeaza_oferta(1, "artament", "aleea", 999, 40);
 	assert(validate(z) == 2);
 	oferta a = creeaza_oferta(1, "apartament", "", 999, 40);
 	assert(validate(a) == 1);
 	oferta b = creeaza_oferta(11, "apartament", "aleea", -999, 40);
 	assert(validate(b) == 5);
-	oferta c = creeaza_oferta(-1, "apartament", "aleea", 999, -40);
+	oferta c = creeaza_oferta(1, "apartament", "aleea", 999, -40);
 	assert(validate(c) == 4);
 	distrugeOferta(&x);
 	distrugeOferta(&y);
@@ -113,7 +116,7 @@ void testare_ordonari_filtrari()
 	VectorDinamic d = ordoneaza_sv(&v, "pret", 2);
 	VectorDinamic e = ordoneaza_sv(&v, "suprafata", 1);
 	VectorDinamic f = ordoneaza_sv(&v, "suprafata", 2);
-
+	
 	assert(a.of[0].id == 3);
 	assert(a.of[1].id == 5);
 	assert(a.of[2].id == 2);
@@ -144,6 +147,7 @@ void testare_ordonari_filtrari()
 	assert(f.of[2].id == 3);
 	assert(f.of[3].id == 4);
 
+	qsor(&v, 0, 2, comparePret);
 	distrugeVectorDinamic(&v);
 	distrugeVectorDinamic(&a);
 	distrugeVectorDinamic(&b);
@@ -163,5 +167,6 @@ void teste()
 	testare_ordonari_filtrari();
 	testare_resize();
 	testare_stergeri();
+	testare_validarari();
 
 }

@@ -22,9 +22,6 @@ char* ft_strdup(const char* s1)
 		copy[i] = 0;
 		return (copy);
 	}
-	if (copy)
-		free(copy);
-	return (NULL);
 }
 
 /*
@@ -38,8 +35,6 @@ int compareTip(const void* a, const void* b)
 	oferta* ia = (oferta*)a;
 	oferta* ib = (oferta*)b;
 
-	//ia->id = ia->id;
-	//ib->id = ib->id;
 	return (strcmp(ia->tip, ib->tip));
 }
 
@@ -54,8 +49,6 @@ int compareTip2(const void* a, const void* b)
 	oferta* ia = (oferta*)a;
 	oferta* ib = (oferta*)b;
 
-	//ia->id = ia->id;
-	//ib->id = ib->id;
 	return (strcmp(ib->tip, ia->tip));
 }
 
