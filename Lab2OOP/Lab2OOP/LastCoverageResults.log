@@ -1,0 +1,21 @@
+[2020-03-18 15:30:32] [info] Start Program:
+Path:"C:\\Users\\user\\source\\repos\\Lab2OOP\\Debug\\Lab2OOP.exe"
+Arguments:
+Working directory: "C:\\Users\\user\\source\\repos\\Lab2OOP\\Lab2OOP\\"
+Modules: Selected: C:\Users\user\source\repos\Lab2OOP\Debug\Lab2OOP.exe Excluded: 
+Sources: Selected: C:\Users\user\source\repos\Lab2OOP\Lab2OOP Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\user\AppData\Local\Temp\myaxijw0.vzu 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2020-03-18 15:30:32] [info] Module: C:\Users\user\source\repos\Lab2OOP\Debug\Lab2OOP.exe is selected because it matches selected pattern: C:\Users\user\source\repos\Lab2OOP\Debug\Lab2OOP.exe
+[2020-03-18 15:30:32] [info] ----------------------------------------------------
+[2020-03-18 15:30:32] [info] Coverage binary generated in file: C:\Users\user\AppData\Local\Temp\myaxijw0.vzu
+[2020-03-18 15:30:32] [info] ----------------------------------------------------

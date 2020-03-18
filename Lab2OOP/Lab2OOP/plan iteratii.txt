@@ -1,0 +1,8 @@
+Iteratia 1:
+	-adaugarea de noi oferte
+	-actualizarea ofertei
+Iteratia 2:
+	-stergere oferta
+Iteratia 3:
+	-oferte ordonate dupa criteriu
+	-ordonare oferte dupa pret, crescator si descrescator
