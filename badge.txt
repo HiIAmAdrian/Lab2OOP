@@ -1,0 +1,1 @@
+https://coveralls.io/repos/github/HiIAmAdrian/Lab2OOP/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/HiIAmAdrian/Lab2OOP?branch=master
